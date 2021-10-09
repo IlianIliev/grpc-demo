@@ -1,0 +1,4 @@
+grpcio==1.41.0
+grpcio-tools==1.41.0
+protobuf==3.17.3
+protobuf3-to-dict==0.1.5

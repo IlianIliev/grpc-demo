@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+
+package demo;
+
+
+message Person {
+  int64 id = 1;
+  string first_name = 2;
+  string last_name = 3;
+}
+
+
+message Contact {
+  int64 id = 1;
+  int64 person_id = 2;
+  string type = 3;
+  string value = 4;
+}
+
+
+message PersonId {
+  int64 id = 1;
+}
+
+
+message FullPersonResponse {
+  Person person = 1;
+  repeated Contact contacts = 2;
+}
+
+
+service AddressBook {
+  rpc CreatePerson(Person) returns (Person) {}
+  rpc GetPerson(PersonId) returns (FullPersonResponse) {}
+  rpc CreateContact(Contact) returns (Contact) {}
+}
+
